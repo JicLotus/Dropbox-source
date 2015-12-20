@@ -1,0 +1,105 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent" android:layout_height="fill_parent">
+
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+
+        >
+
+
+        <!--
+     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+         xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+         android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+         android:paddingRight="@dimen/activity_horizontal_margin"
+         android:paddingTop="0dp"
+         android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity"
+
+         android:id="@+id/layout"
+         >-->
+
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="70dp"
+        android:text="Inicio de sesion Udrive"
+        android:gravity="center"
+        android:id="@+id/title"
+        android:textColor="#fff"
+        android:textSize="31dp"
+        android:linksClickable="true"
+        android:background="#00a"
+        />
+
+
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:layout_marginTop="50dp"
+        android:id="@+id/username"
+        android:layout_alignLeft="@+id/password"
+        android:layout_alignStart="@+id/password"
+        android:layout_below="@+id/title"
+        android:hint="Nombre de usuario"
+        />
+
+
+    <EditText
+
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:id="@+id/password"
+        android:layout_below="@+id/username"
+        android:hint="Contraseña"
+        />
+
+    <Button
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="INICIAR SESION"
+        android:id="@+id/logInBtn"
+        android:layout_marginTop="60dp"
+        android:onClick="logIn"
+        android:layout_below="@+id/password"
+        android:layout_centerHorizontal="true"
+        android:background="#00f"
+        android:textColor="#fff"
+        />
+
+    <!--
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sign Up"
+        android:id="@+id/button"
+        android:layout_alignTop="@+id/logInBtn"
+        android:layout_toLeftOf="@+id/logInBtn"
+        android:layout_toStartOf="@+id/logInBtn"
+        android:onClick="signUp" />
+-->
+
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="¿Tenes cuenta?"
+        android:layout_below="@+id/logInBtn"
+        android:gravity="center"
+        android:layout_marginTop="30dp"
+        android:id="@+id/button"
+        android:textColor="#00f"
+        android:onClick="signUp"
+        android:textSize="20dp"
+        android:clickable="true" />
+
+
+</RelativeLayout>
+</ScrollView>

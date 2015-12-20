@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent" android:layout_height="fill_parent">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="70dp"
+            android:text="Mi cuenta"
+            android:gravity="center"
+            android:id="@+id/title"
+            android:textColor="#fff"
+            android:textSize="31dp"
+            android:linksClickable="true"
+            android:background="#00a"
+            />
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:id="@+id/avatar"
+            android:layout_below="@+id/title"
+            android:src="@drawable/profilepicture"
+            android:onClick="changeAvatar"
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Name"
+            android:id="@+id/nameLbl"
+            android:layout_below="@+id/avatar"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginStart="50dp" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="8"
+            android:id="@+id/nameForm"
+            android:layout_alignBottom="@id/nameLbl"
+            android:layout_marginLeft="70dp"
+            android:layout_toRightOf="@+id/nameLbl" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Last name"
+            android:id="@+id/lastNameLbl"
+            android:layout_below="@+id/nameLbl"
+            android:layout_alignLeft="@+id/nameLbl"
+            android:layout_marginTop="30dp" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="8"
+            android:id="@+id/lastNameForm"
+            android:layout_alignBottom="@id/lastNameLbl"
+            android:layout_alignLeft="@+id/nameForm"
+            android:layout_marginTop="30dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Email"
+            android:id="@+id/emailLbl"
+            android:layout_below="@+id/lastNameLbl"
+            android:layout_alignLeft="@+id/lastNameLbl"
+            android:layout_marginTop="30dp" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="8"
+            android:id="@+id/emailForm"
+            android:layout_alignBottom="@id/emailLbl"
+            android:layout_alignLeft="@+id/lastNameForm"
+            android:layout_marginTop="30dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Última lat."
+            android:id="@+id/latLbl"
+            android:layout_below="@+id/emailLbl"
+            android:layout_alignLeft="@+id/emailLbl"
+            android:layout_marginTop="30dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text=""
+            android:id="@+id/latForm"
+            android:layout_below="@+id/emailForm"
+            android:layout_alignBottom="@id/latLbl"
+            android:layout_alignLeft="@+id/emailForm"
+            android:layout_marginTop="30dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Última long."
+            android:id="@+id/longLbl"
+            android:layout_below="@+id/latLbl"
+            android:layout_alignLeft="@+id/latLbl"
+            android:layout_marginTop="30dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text=""
+            android:id="@+id/longForm"
+            android:layout_below="@+id/latForm"
+            android:layout_alignBottom="@id/longLbl"
+            android:layout_alignLeft="@+id/latForm"
+            android:layout_marginTop="30dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Quota"
+            android:id="@+id/QuotaLbl"
+            android:layout_below="@+id/longLbl"
+            android:layout_alignLeft="@+id/longLbl"
+            android:layout_marginTop="30dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text=""
+            android:id="@+id/quotaForm"
+            android:layout_below="@+id/longForm"
+            android:layout_alignBottom="@id/QuotaLbl"
+            android:layout_alignLeft="@+id/longForm"
+            android:layout_marginTop="30dp" />
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Guardar cambios"
+            android:id="@+id/saveBtn"
+            android:layout_marginTop="40dp"
+            android:layout_below="@+id/quotaForm"
+            android:onClick="save"
+            android:background="#00f"
+            android:textColor="#fff" />
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Cancelar"
+            android:id="@+id/cancelBtn"
+            android:layout_below="@+id/saveBtn"
+            android:onClick="cancel"
+            android:background="#00f"
+            android:textColor="#fff" />
+
+
+    </RelativeLayout>
+</ScrollView>

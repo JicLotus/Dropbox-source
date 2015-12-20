@@ -1,0 +1,88 @@
+Idea general del Trabajo Practico(Google Drive/Dropbox) pasado en limpio:
+
+Antes que nada lo primero que tenemos que hacer es terminar bien el servidor, hacer muchos test sobre el mismo de forma local(python) y ni bien terminemos esa etapa empezar a acceder a MONGOOSE de forma remota desde una aplicacion en android. En lo que sigue del documento esta todo lo que mencionaron los profesores(instalacion de todos los programas que necesitamos, si me falto alguna explicacion o algun detalle, favor de agregarlo)
+
+(PUSE EN MAYUSCULA TODOS LOS TERMINOS MANEJADOS AYER)
+
+Servidor:
+-Lo que se haria es tenerlo montado en lo que seria MONGOOSE, y la base de datos estaria siendo administrada por ROCKDB
+-Mongoose manejaria toda la partede conexion entre cliente/servidor, haciendose cargo de la parte engorrosa que ni tenemos que tocar de threads,etc. (Igualmente en android va a haber que programar algo ya que android por si mismo maneja hilos para las diferentes ventanas, ya lo tengo todo hecho igual)
+-La base de datos ROCKDB si leen la documentacion es una base de datos clave-valor, por lo tanto vamos a tener que de alguna forma armar algun archivo xml(como mencionaron ayer los profesores refiriendose a lo de metadatos) que pueda tener indexado de una forma rapida la clave (relacionada a un usuario por ejemplo) para acceder a los valores de ciertos documentos. Este tipo de base de datos se caracterizan por acceder de forma muy rapida a datos grandes.
+-Lo unico que se debe programar en c++ es el 'Accionar' o las tareas a realizar cuando viene una peticion del servidor. Que quiero decir con esto, que nosotros por un lado tenemos el puente de la comunicacion(Mongoose) y tenemos los datos(RockDB), por lo tanto nuestro codigo debe unir ambas cosas. Debemos hacer el cerebro de toda la operacion, recibir que dice Mongoose y en base a eso designar como manejar o actualizar los datos.
+
+Cliente(Android):
+-Utilizariamos Android Studio para la realizacion del mismo. Nunca lo he usado pero me han comentado que es mucho mejor y mas rapido que el eclipse.
+-La idea es crear una interfaz en donde pongamos un acceso de usuario y otra para el registro del mismo
+-El celular accederia de la forma que explicaron ayer JSON + REST al servidor de Mongoose
+-Json es una herramienta que se utiliza basicamente para acomodar los datos que vas a recibir y mandar de una forma mas facil, ya que si tanto el cliente como el servidor utilizan jason se sabe bien como se los ordena. Basicamente se usa json.enconde(datos) / json.decode(datos)
+-Una vez logueado tendriamos otra interfaz que hace referencia a los archivos que el usuario posee
+
+
+
+Instalacion, pasos para configurar el tp:
+
+
+SERVIDOR:
+
+1)Preparamos el entorno para mongoose instalando Node.js y NPM
+
+
+https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-an-ubuntu-14-04-server
+
+
+2)Instalamos mongoose (Es el servidor que hace que desde afuera o forma local podamos conectarnos a la base de datos de RockDb, mongoose seria una especie de apache):
+
+Ejecutar lo siguiente en la consola
+
+npm install mongoose
+
+
+3) Instalamos RockDb:
+
+https://bienuit.wordpress.com/2013/12/04/how-to-install-rocksdb-on-ubuntu-12-04-lts/
+
+Nota: Al final de todo, en el link, hay un codigo como para probar la DB.
+
+4) Github
+Tutorial para instalarlo, configurarlo y usarlo
+http://www.cristalab.com/tutoriales/introduccion-a-github-en-linux-ubuntu-c106086l/
+
+CLIENTE:
+
+Descargar Android Studio:
+
+https://developer.android.com/sdk/index.html#top
+
+Pasos para la instalacion:
+
+https://developer.android.com/sdk/installing/index.html?pkg=studio
+
+Configuracion servidor
+
+Primero deberemos importar el contenido del servidor. Para esto debemos ir a File->Import . Vamos a la solapa que dice "Git" y seleccionamos
+Projects from Git. Despues seleccionamos 'Existing local Repository'. Apretamos Add y a continuacion en 'Directory' seleccionamos la direccion en donde tenemos nuestro repo. Bueno ahi tenemos todos el mismo proyecto y configurado corretamente para que RockDb funcione.
+
+Todavia nos falta un paso antes de compilar y es el hecho de poner las librerias necesarias. Como son muy pesadas ese paquete de librerias
+generadas en el paso 3) del archivo "Explicacion TP + instalacion" en la parte de servidor lo pegamos dentro de la carpeta 'Servidor' en nuestro repositorio. La carpeta debe llamarse si o si 'lib', asi como se los indica la web del paso 3) en el archivo. Recuerden no subir estas librerias al repositorio, cada uno tendra las mismas en su respectiva pc.
+
+Para hacer pull o push se puede hacer de dos maneras. Una puede ser desde consola como siempre u la otra desde el eclipse mismo. Para hacerlo desde eclipse solo basta hacer click derecho al proyecto + Team + Commit para hacer un push + commit o sino Team + Pull.
+
+PARA CONFIGURAR MONGOOSE:
+
+Simplemente debemos ir a este link
+
+https://github.com/cesanta/mongoose/
+
+y descargar los archivos mongoose.h y mongoose.c y pegarlos en nuestra carpeta 'lib'
+
+PARA CONFIGURAR JSONCPP
+
+Primero tienen que ejecutar en la consola estos comandos:
+
+apt-get install scons
+wget "http://downloads.sourceforge.net/project/jsoncpp/jsoncpp/0.5.0/jsoncpp-src-0.5.0.tar.gz?r=http%3A%2F%2Fsourceforge.net%2Fprojects%2Fjsoncpp%2F&ts=1294425421&use_mirror=freefr"
+tar -xvzf jsoncpp-src-0.5.0.tar.gz
+cd jsoncpp-src-0.5.0
+scons platform=linux-gcc
+
+Luego ir a la carpeta "jsoncpp-src-0.5.0" y copiar en la carpeta del TP /lib el archivo de nombre libjson_linux-gcc-4.8_libmt.a. Osea lo pegan directamente dentro de la carpeta lib. Probar que compile el proyecto.

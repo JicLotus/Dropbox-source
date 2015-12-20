@@ -1,0 +1,44 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="fiuba.cliente.activity.DocumentsActivity">
+
+
+
+    <item android:id="@+id/sharedFiles"
+        android:title="Compartidos conmigo" />
+
+    <item android:id="@+id/searchTag"
+        android:title="Buscar por etiquetas" />
+
+    <item android:id="@+id/searchExtension"
+        android:title="Buscar por extensión" />
+
+    <item android:id="@+id/searchName"
+        android:title="Buscar por nombre" />
+
+    <item android:id="@+id/searchOwner"
+        android:title="Buscar por propietario" />
+
+    <item android:id="@+id/backToMyFiles"
+        android:title="Volver a mis archivos"
+        android:visible="false"/>
+
+    <item android:id="@+id/updateAll"
+        android:showAsAction="always"
+        android:icon="@drawable/refresh"
+        android:title="Actualizar" />
+
+    <item android:id="@+id/details"
+        android:title="Mi cuenta" />
+
+    <item android:id="@+id/recoverFile"
+        android:title="Papelera" />
+
+    <item android:id="@+id/logOut"
+        android:title="Salir" />
+
+    <item android:id="@+id/removeUser"
+        android:title="Eliminar cuenta" />
+
+</menu>

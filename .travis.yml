@@ -1,0 +1,13 @@
+sudo: required
+
+language: cpp
+
+services:
+- docker
+
+before_install:
+- cd ./Servidor/dockertravisbuild
+- sudo docker build -t taller2 .
+
+script:
+- sudo docker run -t -i taller2 /bin/bash -c "./taller2/Servidor/build/Test"

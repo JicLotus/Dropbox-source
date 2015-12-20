@@ -1,0 +1,169 @@
+==========================
+Documentación Cliente
+==========================
+********************
+Introducción general
+********************
+
+UDrive es una aplicación para la administración de cualquier tipo archivos. Entre sus caracteristicas se destaca el versionado de archivos, la posibilidad de etiquetar los archivos para poder realizar búsquedas por ellos y por otros tantos criterios. Ademas permite la posibilidad de que sus usuarios compartan sus archivos entre si.
+
+**************************
+Funcionalidades incluidas
+**************************
+
+1. Creación de usuarios
+2. Modificación de datos del perfil del usuario
+3. Eliminar usuario
+4. Compartir archivos
+5. Almacenamiento y descarga de archivos
+6. Versionado de archivos
+7. Búsqueda de archivos por extensión, nombre, propietario y etiqueta
+8. Papelera de reciclaje de archivos
+9. Visualizar información de archivo
+10. Modificar nombre de archivo
+11. Descargar cualquier versión de un archivo
+12. Creación y eliminación de Tags a un archivo
+13. Creación de carpetas
+14. Visualizar archivos compartidos
+15. Descompartir archivo
+16. Eliminar archivo
+
+*************************
+Guía de uso
+*************************
+
+1. Pantalla de login
+======================
+
+Si no posee usuario deberá crear uno para acceder a la aplicación, cliqueando el botón Signup
+
+.. image:: 1.png
+	:scale: 30
+
+2. Creación de usuario
+===============================
+
+Ingrese sus datos y presione Sign up, luego la aplicación validará que no haya otro usuario con su mismo identificador.
+
+.. image:: 2.png
+	:scale: 30
+
+3. Pantalla inicial de la aplicación
+======================================
+
+Aquí vera sus archivos
+
+.. image:: 3.png
+	:scale: 30
+
+4. Opciones generales
+===============================
+
+Click en el boton Propiedades del celular y podrá apreciar el menu de opciones generales
+
+.. image:: 4.png
+	:scale: 30
+
+5. Subir nuevo archivo
+===============================
+
+En el menú de opciones general acceder a la opción de Subir Archivo
+
+.. image:: 6.png
+	:scale: 30
+
+Seleccione archivo:
+
+.. image:: 7.png
+	:scale: 30
+
+Verá su nuevo archivo en la pantalla inicial:
+
+.. image:: 8.png
+	:scale: 30
+
+6. Visualizar versiones del archivo
+====================================
+
+Seleccione el archivo y mantenga el dedo presionado sobre el mismo hasta que se displiege el menú con opciones y seleccione Versiones.
+
+.. image:: 10.png
+	:scale: 30
+
+.. image:: 11.png
+	:scale: 30
+
+7. Ver los detalles de un archivo
+==================================
+
+Seleccione el archivo y mantenga el dedo presionado sobre el mismo hasta que se displiege el menú con opciones y seleccione Detalles.
+
+.. image:: 15.png
+	:scale: 30
+
+8. Agregar Tags a un archivo
+===============================
+
+Seleccione el archivo y mantenga el dedo presionado sobre el mismo hasta que se displiege el menú con opciones y seleccione Tags.
+
+.. image:: 18.png
+	:scale: 30
+
+.. image:: 19.png
+	:scale: 30
+
+.. image:: 20.png
+	:scale: 30
+
+9. Modificar nombre de archivo
+===============================
+
+Seleccione el archivo y mantenga el dedo presionado sobre el mismo hasta que se displiege el menú con opciones y seleccione Modificar nombre.
+
+.. image:: 22.png
+	:scale: 30
+
+10. Compartir archivos
+===============================
+
+Seleccione el archivo y mantenga el dedo presionado sobre el mismo hasta que se displiege el menú con opciones y seleccione Compatir
+
+.. image:: 24.png
+	:scale: 30
+
+Seleccione usuario
+
+.. image:: 25.png
+	:scale: 30
+
+11. Visualizar archivos compartidos
+====================================
+
+En el menú de opciones generales seleccionar Compartidos conmigo:
+
+.. image:: 30.png
+	:scale: 30
+
+.. image:: 31.png
+	:scale: 30
+
+12. Buscar un archivo
+===============================
+
+En el menú de opciones generales se puede seleccionar busqueda por:
+
+a. Etiquetas
+b. Extensión
+c. Nombre
+d. Propietario
+
+.. image:: 33.png
+	:scale: 30
+
+13. Crear nueva carpeta
+===============================
+
+En el menú de opciones generales se puede seleccionar Crear nueva carpeta:
+
+.. image:: 45.png
+	:scale: 30

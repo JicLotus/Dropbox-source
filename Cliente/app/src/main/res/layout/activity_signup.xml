@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent" android:layout_height="fill_parent"
+    >
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+
+    >
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="70dp"
+        android:text="Crear cuenta"
+        android:gravity="center"
+        android:id="@+id/title"
+        android:textColor="#fff"
+        android:textSize="31dp"
+        android:linksClickable="true"
+        android:background="#00a"
+        />
+
+
+
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:id="@+id/usernameForm"
+        android:layout_below="@+id/title"
+        android:hint="Nombre de usuario"
+
+        />
+
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/nameForm"
+        android:layout_below="@+id/usernameForm"
+        android:hint="Nombre"
+        />
+
+
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/lastNameForm"
+        android:layout_below="@+id/nameForm"
+
+        android:hint="Apellido"
+        />
+
+
+
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:ems="10"
+        android:id="@+id/emailForm"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/lastNameForm"
+        android:hint="Mail"
+        />
+
+
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:id="@+id/passwordForm"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/emailForm"
+        android:hint="Contraseña"
+        />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Crear"
+        android:id="@+id/signUpBtn"
+        android:layout_marginTop="40dp"
+        android:layout_below="@+id/passwordForm"
+        android:onClick="signUp"
+        android:background="#00f"
+        android:textColor="#fff"
+        />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Cancelar"
+        android:id="@+id/cancelBtn"
+        android:layout_below="@+id/signUpBtn"
+        android:onClick="cancel"
+        android:background="#00f"
+        android:textColor="#fff"
+        />
+
+</RelativeLayout>
+</ScrollView>

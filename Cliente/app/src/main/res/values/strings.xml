@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">TP Taller 2</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_signup">Signup</string>
+    <string name="title_activity_documents">TP Taller 2 - root/</string>
+    <string name="uploading">Uploading File</string>
+    <string name="downloading">Downloading File</string>
+    <string name="title_activity_file_options">fileOptions</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_user_details">UserDetails</string>
+</resources>

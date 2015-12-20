@@ -1,0 +1,70 @@
+-----------------------------------------------------------------------------
+1) Introduccion
+-----------------------------------------------------------------------------
+Materia: Taller 2 - FIUBA
+TP: UDrive
+Cuatrimestre: 2do de 2015
+Integrantes: Albanese Pablo, Castelli Jose, Lew Kevin, Ventura Eliana.
+-----------------------------------------------------------------------------
+2) Explicacion estructura de carpetas
+-----------------------------------------------------------------------------
+El presente TP consta de 2 carpetas principales:
+	-Cliente: Proyecto desarrollado con Andoid Studio
+	-Servidor: Proyecto desarrollado con Eclipse C++
+-----------------------------------------------------------------------------
+3) Requerimientos Servidor
+-----------------------------------------------------------------------------
+Tener instalado el siguiente software:
+a) gcc 4.0.+
+b) Node.js [1]
+c) NPM [2]
+d) RocksDB [3]
+e) JsonCPP [4]
+f) Mongoose [5]
+-----------------------------------------------------------------------------
+4) Pasos para compilar y ejecutar Servidor
+-----------------------------------------------------------------------------
+a) Dirigirse al directorio raiz del repositorio.
+b) Ir a carpeta Servidor: cd Servidor
+c) Ejecutar archivo CompileServer.sh: ./CompileServer.sh
+d) Ir a carpeta build: cd build
+e) Ejecutar programa Servidor: ./Servidor
+f) Por consola se indicara el mensaje: Mongoose iniciando en puerto: 8080
+-----------------------------------------------------------------------------
+5) Requerimientos Cliente
+-----------------------------------------------------------------------------
+a) Android Studio 1.3.+ [6]
+b) Java 7+
+-----------------------------------------------------------------------------
+6) Pasos para compilar y ejecutar Cliente
+-----------------------------------------------------------------------------
+a) Abrir Android Studio
+b) Importar proyecto ubicado en carpeta Cliente
+c) Ejecutar proyecto.
+-----------------------------------------------------------------------------
+7) Pasos para ejecutar el servidor en Docker
+-----------------------------------------------------------------------------
+a)Instalación de docker
+wget -qO- https://get.docker.com/ | sh
+b)Dirigirse a la carpeta Servidor/dockerbuild y ejecutar:
+sudo docker build -t taller2 .
+c)Luego para abrir una consola en la virtual machine del Doker hacer:
+sudo docker run -t -i taller2 /bin/bash
+d)Por último para ejecutar el servidor en la virtual machine del docker:
+./taller2/Servidor/build/Servidor
+-----------------------------------------------------------------------------
+8) Referencias
+-----------------------------------------------------------------------------
+[1] Tutorial instalacion Node.js: https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-an-ubuntu-14-04-server
+[2] Comando para instalacion: npm install mongoose
+[3] Tutorial instalacion RocksDB: https://bienuit.wordpress.com/2013/12/04/how-to-install-rocksdb-on-ubuntu-12-04-lts/
+[4] Pasos para instalacion: 
+apt-get install scons
+wget "http://downloads.sourceforge.net/project/jsoncpp/jsoncpp/0.5.0/jsoncpp-src-0.5.0.tar.gz?r=http%3A%2F%2Fsourceforge.net%2Fprojects%2Fjsoncpp%2F&ts=1294425421&use_mirror=freefr"
+tar -xvzf jsoncpp-src-0.5.0.tar.gz
+cd jsoncpp-src-0.5.0
+scons platform=linux-gcc
+[5] Pagina de descarga: https://github.com/cesanta/mongoose/
+[6] Pagina de descarga: https://developer.android.com/sdk/index.html#top
+
+

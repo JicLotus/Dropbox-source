@@ -1,0 +1,863 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Documentación técnica &mdash; documentación de UDrive - 1</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="documentación de UDrive - 1" href="#"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="#" class="icon icon-home"> UDrive
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <!-- Local TOC -->
+                <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">Documentación técnica</a><ul>
+<li><a class="reference internal" href="#ambiente-de-desarrollo">Ambiente de desarrollo</a></li>
+<li><a class="reference internal" href="#librerias-y-compilacion-servidor">Librerías y compilación Servidor</a></li>
+<li><a class="reference internal" href="#librerias-y-compilacion-cliente">Librerías y compilación Cliente</a></li>
+<li><a class="reference internal" href="#arquitectura">Arquitectura</a></li>
+<li><a class="reference internal" href="#clases">Clases</a><ul>
+<li><a class="reference internal" href="#diagrama-de-clases-uml">Diagrama de clases UML</a></li>
+<li><a class="reference internal" href="#descripcion-de-las-clases-utilizadas">Descripción de las clases utilizadas</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#rest-api">REST API</a></li>
+<li><a class="reference internal" href="#pruebas">Pruebas</a></li>
+<li><a class="reference internal" href="#docker">Docker</a></li>
+<li><a class="reference internal" href="#travis">Travis</a></li>
+<li><a class="reference internal" href="#links">Links</a></li>
+</ul>
+</li>
+</ul>
+</div>
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="#">UDrive</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="#">Docs</a> &raquo;</li>
+      
+    <li>Documentación técnica</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/index.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="documentacion-tecnica">
+<h1>Documentación técnica<a class="headerlink" href="#documentacion-tecnica" title="Enlazar permanentemente con este título">¶</a></h1>
+<div class="section" id="ambiente-de-desarrollo">
+<h2>Ambiente de desarrollo<a class="headerlink" href="#ambiente-de-desarrollo" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>El código se encuentra dividido en dos grandes proyectos los cuales son:</p>
+<ol class="arabic simple">
+<li>Cliente, desarrollado en Java con IDE Android Studio.</li>
+<li>Servidor, desarrollado en C++ con el IDE Eclipse C++.</li>
+</ol>
+</div>
+<div class="section" id="librerias-y-compilacion-servidor">
+<h2>Librerías y compilación Servidor<a class="headerlink" href="#librerias-y-compilacion-servidor" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Librerías utilizadas:</p>
+<ol class="loweralpha simple">
+<li>gcc 4.0.+</li>
+<li>Node.js</li>
+<li>NPM</li>
+<li>RocksDB</li>
+<li>JsonCPP</li>
+<li>Mongoose</li>
+</ol>
+<p>Pasos para compilación:</p>
+<ol class="loweralpha simple">
+<li>Dirigirse al directorio raíz del repositorio.</li>
+<li>Ir a carpeta Servidor: cd Servidor</li>
+<li>Ejecutar archivo CompileServer.sh: ./CompileServer.sh</li>
+<li>Ir a carpeta build: cd build</li>
+<li>Ejecutar programa Servidor: ./Servidor</li>
+<li>Por consola se indicará el mensaje: Mongoose iniciando en puerto: 8080</li>
+</ol>
+</div>
+<div class="section" id="librerias-y-compilacion-cliente">
+<h2>Librerías y compilación Cliente<a class="headerlink" href="#librerias-y-compilacion-cliente" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Librerías utilizadas:</p>
+<ol class="loweralpha simple">
+<li>Android Studio 1.3.+</li>
+<li>Java 7+</li>
+</ol>
+<p>Pasos para compilación:</p>
+<ol class="loweralpha simple">
+<li>Abrir Android Studio</li>
+<li>Importar proyecto ubicado en carpeta Cliente</li>
+<li>Ejecutar proyecto.</li>
+</ol>
+</div>
+<div class="section" id="arquitectura">
+<h2>Arquitectura<a class="headerlink" href="#arquitectura" title="Enlazar permanentemente con este título">¶</a></h2>
+</div>
+<div class="section" id="clases">
+<h2>Clases<a class="headerlink" href="#clases" title="Enlazar permanentemente con este título">¶</a></h2>
+<div class="section" id="diagrama-de-clases-uml">
+<h3>Diagrama de clases UML<a class="headerlink" href="#diagrama-de-clases-uml" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>A continuación visualizamos un diagrama de clases participantes, estas clases son las principales del proyecto Servidor y las que dan origen a su modelo de datos:</p>
+<img alt="_images/clases.png" src="_images/clases.png" />
+</div>
+<div class="section" id="descripcion-de-las-clases-utilizadas">
+<h3>Descripción de las clases utilizadas<a class="headerlink" href="#descripcion-de-las-clases-utilizadas" title="Enlazar permanentemente con este título">¶</a></h3>
+<p><strong>User</strong></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="15%" />
+<col width="8%" />
+<col width="77%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Campo</th>
+<th class="head">Tipo</th>
+<th class="head">Descripción</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>identifier</td>
+<td>string</td>
+<td>Identificador con el que se logea en la aplicación</td>
+</tr>
+<tr class="row-odd"><td>name</td>
+<td>string</td>
+<td>Nombre del usuario</td>
+</tr>
+<tr class="row-even"><td>lastName</td>
+<td>string</td>
+<td>Apellido del usuario</td>
+</tr>
+<tr class="row-odd"><td>md5</td>
+<td>string</td>
+<td>Password en MD5.</td>
+</tr>
+<tr class="row-even"><td>quotaMB</td>
+<td>int</td>
+<td>Límite de almacenamiento permitido al usuario.</td>
+</tr>
+<tr class="row-odd"><td>quotaLimitMB</td>
+<td>string</td>
+<td>Uso actual del almacenamiento</td>
+</tr>
+<tr class="row-even"><td>email</td>
+<td>string</td>
+<td>Es el identificador con el que se logea en la aplicación</td>
+</tr>
+<tr class="row-odd"><td>avatar</td>
+<td>string</td>
+<td>Email del usuario</td>
+</tr>
+<tr class="row-even"><td>sharedFiles</td>
+<td>array</td>
+<td>Array con los archivos que se le compartieron al usuario</td>
+</tr>
+<tr class="row-odd"><td>ownFiles</td>
+<td>array</td>
+<td>Array con los archivos creados por el usuario</td>
+</tr>
+<tr class="row-even"><td>lastLatitude</td>
+<td>string</td>
+<td>Latitud de la última localización del usuario</td>
+</tr>
+<tr class="row-odd"><td>lastLongitude</td>
+<td>string</td>
+<td>Longitud de la última localización del usuario</td>
+</tr>
+<tr class="row-even"><td>active</td>
+<td>bool</td>
+<td>true ó false dependiendo de si está activo ó no el User</td>
+</tr>
+</tbody>
+</table>
+<p><strong>File</strong></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="16%" />
+<col width="8%" />
+<col width="76%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Campo</th>
+<th class="head">Tipo</th>
+<th class="head">Descripción</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>id</td>
+<td>int</td>
+<td>Identificador generado automaticamente</td>
+</tr>
+<tr class="row-odd"><td>name</td>
+<td>string</td>
+<td>En caso de archivos no contiene la extensión</td>
+</tr>
+<tr class="row-even"><td>extension</td>
+<td>string</td>
+<td>Extensión del archivo</td>
+</tr>
+<tr class="row-odd"><td>type</td>
+<td>int</td>
+<td>Puede ser File=1 ó Folder=2</td>
+</tr>
+<tr class="row-even"><td>sizeMB</td>
+<td>int</td>
+<td>Tamaño en MB del file. Se utiliza solo en caso de File.</td>
+</tr>
+<tr class="row-odd"><td>tags</td>
+<td>array</td>
+<td>Palabras claves que identifican al archivo (etiquetas)</td>
+</tr>
+<tr class="row-even"><td>delete</td>
+<td>bool</td>
+<td>True si el archivo se encuentra eliminado. False en caso contrario.</td>
+</tr>
+<tr class="row-odd"><td>lastModifiedBy</td>
+<td>string</td>
+<td>Identifier del ultimo usuario que modifico el archivo</td>
+</tr>
+<tr class="row-even"><td>lastModifiedOn</td>
+<td>date</td>
+<td>Contiene el número de la última versión del archivo</td>
+</tr>
+<tr class="row-odd"><td>lastVersion</td>
+<td>int</td>
+<td>Array con los archivos creados por el usuario</td>
+</tr>
+<tr class="row-even"><td>versions</td>
+<td>array</td>
+<td>Array con elementos que contienen número y file_identifier.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>FileVersion</strong></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="8%" />
+<col width="67%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Campo</th>
+<th class="head">Tipo</th>
+<th class="head">Descripción</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>identifier</td>
+<td>int</td>
+<td>Identificador único del archivo</td>
+</tr>
+<tr class="row-odd"><td>fileContentIdentifier</td>
+<td>string</td>
+<td>Identificador de FileContent</td>
+</tr>
+<tr class="row-even"><td>date</td>
+<td>string</td>
+<td>Fecha de version</td>
+</tr>
+</tbody>
+</table>
+<p><strong>FileContent</strong></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="8%" />
+<col width="67%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Campo</th>
+<th class="head">Tipo</th>
+<th class="head">Descripción</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>identifier</td>
+<td>int</td>
+<td>Identificador único del archivo</td>
+</tr>
+<tr class="row-odd"><td>content</td>
+<td>string</td>
+<td>Contenido del archivo</td>
+</tr>
+</tbody>
+</table>
+<p>Estas clases son serializadas en RocksDB en formato JSON.</p>
+<p>El servidor contiene clases las cuales brindan el servicio de manipulación de estas clases, las cuales son <strong>FileHandler</strong> y <strong>UserHandler</strong>.</p>
+</div>
+</div>
+<div class="section" id="rest-api">
+<h2>REST API<a class="headerlink" href="#rest-api" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Listado de funcionalidades soportadas por la API REST</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="1%" />
+<col width="5%" />
+<col width="31%" />
+<col width="63%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">#</th>
+<th class="head">Verbo</th>
+<th class="head">URL</th>
+<th class="head">Descripción</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>1</td>
+<td>GET</td>
+<td>/users/auth?identifier=[identifier]&amp;md5=[md5]</td>
+<td>Autentica a un User. Devuelve un token de autenticación</td>
+</tr>
+<tr class="row-odd"><td>2</td>
+<td>PUT</td>
+<td>/users/[identifier]</td>
+<td>Modifica datos del usuario</td>
+</tr>
+<tr class="row-even"><td>3</td>
+<td>GET</td>
+<td>/users/[identifier]</td>
+<td>Obtiene los datos de un usuario</td>
+</tr>
+<tr class="row-odd"><td>4</td>
+<td>POST</td>
+<td>/users</td>
+<td>Crea un nuevo User</td>
+</tr>
+<tr class="row-even"><td>5</td>
+<td>DELETE</td>
+<td>/users/[identifier]</td>
+<td>Setea como inactivo el User</td>
+</tr>
+<tr class="row-odd"><td>6</td>
+<td>GET</td>
+<td>/metafiles/[metafile_identifier]</td>
+<td>Retorna un archivo con [metafile_identifier]</td>
+</tr>
+<tr class="row-even"><td>7</td>
+<td>DELETE</td>
+<td>/metafiles/[metafile_identifier]</td>
+<td>Eliminación lógica de metadatos de archivo</td>
+</tr>
+<tr class="row-odd"><td>8</td>
+<td>PUT</td>
+<td>/metafiles/[metafile_identifier]</td>
+<td>Modificación de metadatos archivo</td>
+</tr>
+<tr class="row-even"><td>9</td>
+<td>GET</td>
+<td>/files/[metafile_identifier]/[version]</td>
+<td>Descarga de archivo</td>
+</tr>
+<tr class="row-odd"><td>10</td>
+<td>POST</td>
+<td>/files Autentica a un User.</td>
+<td>Subida de archivo</td>
+</tr>
+<tr class="row-even"><td>11</td>
+<td>POST</td>
+<td>/files/share/[fileID]</td>
+<td>Comparte el File de id [fileID] a todos los Users pasados por parámetro</td>
+</tr>
+<tr class="row-odd"><td>12</td>
+<td>POST</td>
+<td>/files/recovery/[fileID]</td>
+<td>Quita de papelera al File con id [fileID]</td>
+</tr>
+<tr class="row-even"><td>13</td>
+<td>DELETE</td>
+<td>/files/share/[fileID]?user=[user_identifier]</td>
+<td>Quita la relación entre el File de id [fileID] con todos los usuarios pasados por parámetro.</td>
+</tr>
+</tbody>
+</table>
+<p>Detalle:</p>
+<p><strong>1./users/auth?user=[identifier]&amp;md5=[md5] (GET)</strong></p>
+<p>Retorna:</p>
+<div class="highlight-json"><div class="highlight"><pre>{ “result” : “[OK/ERROR]” ,  “message” : “[completar en caso de error]”, token : ‘[guid]’ }
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">el guid es autogenerado por el servidor.</p>
+</div>
+<p><strong>2. /users/[identifier] (PUT)</strong></p>
+<p>Parámetros:</p>
+<div class="highlight-json"><div class="highlight"><pre>{
+token : ‘[guid]’
+, identifier : ‘[identifier]’
+, name  : ‘[name]’
+, lastName : ‘[lastName]’
+, email: ‘[email]’
+, avatar: ‘[avatar]’
+, lastLocation: {  latitude : ‘’, longitude : ‘’ }’
+}
+</pre></div>
+</div>
+<p>Retorna:</p>
+<div class="highlight-json"><div class="highlight"><pre>{ result : [OK/ERROR] ,  message : ‘[completar en caso de error]’ }
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">el campo MD5, quotaMB, quotaLimitMB no se puede modificar con este método.</p>
+</div>
+<p><strong>3. /users/[identifier]?token=[token] (GET)</strong></p>
+<p>Retorna:</p>
+<div class="highlight-json"><div class="highlight"><pre>{
+     identifier : ‘[identifier]’
+    , name  : ‘[name]’
+    , lastName : ‘[lastName]’
+    , root: ‘[root]’
+    , quotaMB: ‘[quotaMB]’
+    , quotaLimitMB: ‘[quotaLimitMB]’
+    , email: ‘[email]’
+    , avatar: ‘[avatar]’
+    , lastLocation: {  latitude : ‘’, longitude : ‘’ }’
+    , ownerFiles: ‘[array con identifier de metafiles con jerarquias de carpetas]’
+    , sharedFiles: ‘[array con identifier de files]’
+}
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">el campo md5 no se retorna en este método por cuestiones de seguridad.</p>
+</div>
+<p><strong>4. /users (POST)</strong></p>
+<p>Parámetros:</p>
+<div class="highlight-json"><div class="highlight"><pre>{
+    “token” : “[guid]”
+    , “identifier” : “[identifier]”
+    , “name”  : “[name]”
+    , “lastName” : “[lastName]”
+    , “md5” : “[md5]”
+    , “email” : “[email]”
+    , “avatar” : “[avatar]”
+    , “lastLatitude” : “[lastLatitude]”
+    , “lastLongitude” : “[lastLongitude]”
+}
+</pre></div>
+</div>
+<p>Retorna:</p>
+<div class="highlight-json"><div class="highlight"><pre>{ “result” : “[OK/ERROR]” ,  “message” : “[completar en caso de error]” }
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">debe validar que el identifier no exista, en caso de que si exista devolver error con el mensaje. El valor de quotaLimitMB debe ser obtenido por parámetro de configuración.</p>
+</div>
+<p><strong>5. /users/[identifier]?token=[token] (DELETE)</strong></p>
+<p>Pasa a inactivo el user.</p>
+<p>Retorna:</p>
+<div class="highlight-json"><div class="highlight"><pre>{ “result” : “[OK/ERROR]” ,  “message” : “[completar en caso de error]” }
+</pre></div>
+</div>
+<p><strong>6. /metafiles/[metafile_identifier]?token=[token] (GET)</strong></p>
+<p>Retorna:</p>
+<div class="highlight-json"><div class="highlight"><pre>{
+     token : ‘[guid]’
+    , name: ‘[identifier]’
+    , extension: ‘[lastName]’
+    , type: ‘[root]’
+    , content: ‘[content]’
+    , sizeMB: ‘[sizeMB]’
+    , tags: ‘[tags]’
+    , delete: ‘[delete]’
+    , lastModifiedUser: ‘[useridentifier]’
+    , lastModifiedOn: ‘[lastModifiedOn]’
+    , lastVersion: ‘[lastVersion]’
+    , versions : { [ version : [version], file : [file_identfier], date : [date] ] }
+}
+</pre></div>
+</div>
+<p><strong>7. /metafiles/[file_identifier]?token=[token] (DELETE)</strong></p>
+<p>Retorna:</p>
+<div class="highlight-json"><div class="highlight"><pre>{ result : [OK/ERROR] ,  message : ‘[completar en caso de error]’ }
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">setea el atributo delete en true.</p>
+</div>
+<p><strong>8. /metafiles/[file_identifier] (PUT)</strong></p>
+<p>Parámetros:</p>
+<div class="highlight-json"><div class="highlight"><pre>{
+     token : ‘[guid]’
+    , id : ‘[file_identifier]’
+    , name: ‘[name]’
+    , extension: ‘[lastName]’
+    , type: ‘[type]’
+    , content: ‘[content]’
+    , sizeMB: ‘[sizeMB]’
+    , tags: ‘[tags]’
+    , lastModifiedUser: ‘[user_identifier]’
+}
+</pre></div>
+</div>
+<p>Retorna:</p>
+<div class="highlight-json"><div class="highlight"><pre>{ result : [OK/ERROR] ,  message : ‘[completar en caso de error]’ }
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">tiene que completar el campo lastModifiedOn con la fecha y hora actual.</p>
+</div>
+<p><strong>9. /files/[metafile_identifier]/[version]?token=[token] (GET)</strong></p>
+<p>Retorna: Archivo</p>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">si no esta /[version] especificado se tiene que devolver la última versión.</p>
+</div>
+<p><strong>10. /files (POST)</strong></p>
+<p>Parámetros:</p>
+<div class="highlight-json"><div class="highlight"><pre>{
+     token : ‘[guid]’
+    , name: ‘[identifier]’
+    , owner : ‘[user_identifier]’
+    , extension: ‘[lastName]’
+    , type: ‘[type]’
+    , content: ‘[content]’
+    , sizeMB: ‘[sizeMB]’
+    , tags: ‘[tags]’
+    , father: ‘[file_identifier]’
+    , content: ‘[contenido del archivo]
+    , version: ‘[version]’
+    , forceCreation: ‘[bool]’
+}
+</pre></div>
+</div>
+<p>Retorna:</p>
+<div class="highlight-json"><div class="highlight"><pre>{ result : [OK/ERROR] ,  message : ‘[completar en caso de error]’, metafile : [metafile_identifier] } }
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">La idea de este método es que si se le pasa un metafile_identfier entonces va a crear una nueva versión del archivo y se la va a sumar a la que ya existían y actualizar la información del metafile, en caso de que no  le pase un metafile_identifier entonces va a crear un nuevo metafile. Cuando se quiere actualizar una versión y se pasa en el parámetro version una versión menor a la actual hay que devolver un error de “old version” a no ser que el parámetro forceCreation venga en true, en ese caso procedemos normalmente.</p>
+</div>
+<p><strong>12. /files/search (POST)</strong></p>
+<p>Parametros:</p>
+<div class="highlight-json"><div class="highlight"><pre>{
+     token : ‘[guid]’
+    , tag: ‘[identifier]’
+    , extension: ‘[extension]’
+    , own: ‘[user_identifier]’
+    , name: ‘[name]’
+    , delete: ‘[delete]’
+}
+</pre></div>
+</div>
+<p>Retorna: Array de files encontrados.</p>
+<p><strong>13. /metafiles/recovery/[metafile_identifier] (POST)</strong></p>
+<p>Retorna:</p>
+<div class="highlight-json"><div class="highlight"><pre>{ result : [OK/ERROR] ,  message : ‘[completar en caso de error]’ }
+</pre></div>
+</div>
+<p><strong>14. /metafiles/share/[metafile_identifier] (POST)</strong></p>
+<p>Parametros:</p>
+<div class="highlight-json"><div class="highlight"><pre>{
+    token : ‘[guid]’
+    , users : [ identifier1, identifier2 ]
+}
+</pre></div>
+</div>
+<p>Retorna:</p>
+<div class="highlight-json"><div class="highlight"><pre>{ result : [OK/ERROR] ,  message : ‘[completar en caso de error]’ }
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">tiene que buscar el los user_identifier pasados por parámetro y agregarle al campo sharedFiles el identificador file_identifier.</p>
+</div>
+<p><strong>15. /metafiles/[metafile_identifier]/share/[user_identifier]?token=[token] (DELETE)</strong></p>
+<p>Retorna:</p>
+<div class="highlight-json"><div class="highlight"><pre>{ result : [OK/ERROR] ,  message : ‘[completar en caso de error]’ }
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Nota</p>
+<p class="last">busca el user_identifer pasado por parámetro y eliminarle del array sharedFiles el item file_identifier.</p>
+</div>
+</div>
+<div class="section" id="pruebas">
+<h2>Pruebas<a class="headerlink" href="#pruebas" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Hemos utilizado los 2 herramientas de testing para el servidor</p>
+<ol class="arabic simple">
+<li>Test unitarios: para testear las clases base que dan servicios a la API Rest.</li>
+<li>Test python: para testear la API rest de forma automatizada y sin tener que poseer un cliente Android y para probar el rendimiento de la API Rest.</li>
+</ol>
+<p>En la arquitectura de nuestro TP definimos 4 entidades básicas que son:</p>
+<ol class="arabic simple">
+<li>User</li>
+<li>File</li>
+<li>FileContent</li>
+<li>Token</li>
+</ol>
+<p>Y 2 clases que brindan servicios a la API utilizando estas 4 entidades las cuales son:</p>
+<ol class="arabic simple">
+<li>FileHandler</li>
+<li>UserHandler</li>
+</ol>
+<p>Los test de cobertura que realizamos abarcan mas del 80% del codigo fuente de estas clases:</p>
+<img alt="_images/covertura.png" src="_images/covertura.png" />
+<p>La imagen fue obtenida utilizando la herramienta gcov de gcc + Eclipse para interpretar los datos.</p>
+<p>En cuanto a los test python logramos tener tener todos los métodos de la API rest testeados en 9 test diferentes:</p>
+<img alt="_images/python.png" src="_images/python.png" />
+<p>En el documento README incluido en este documento se detalla como ejecutar estos tests.</p>
+<p>También hemos realizado un test de rendimiento en Python el cual a arrojado los siguientes resultados:</p>
+<ol class="arabic simple">
+<li>Tiempo en buscar info de un usuario 100 veces ...... 6.15s</li>
+<li>Tiempo en descargar archivo de 500 kb 100 veces ...... 4.8s</li>
+<li>Tiempo en buscar info de un usuario 500 veces ...... 38.62s</li>
+<li>Tiempo en descargar archivo de 500 kb 500 veces ...... 34.15s</li>
+</ol>
+</div>
+<div class="section" id="docker">
+<h2>Docker<a class="headerlink" href="#docker" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Hemos hecho uso de la herramienta Doker para verificar que nuestro Servidor pueda iniciarse en un ambiente que no sea el de nuestras propias máquinas. Para esto lo que hicimos fue el script de Doker para instalar la maquina virtual.</p>
+<p>Los pasos para ejecutar el docker file están también incluidos en el archivo README y son los siguientes:</p>
+<ol class="arabic simple">
+<li>Instalación de docker</li>
+</ol>
+<p>wget -qO- <a class="reference external" href="https://get.docker.com/">https://get.docker.com/</a> | sh</p>
+<ol class="arabic simple" start="2">
+<li>Dirigirse a la carpeta Servidor/dockerbuild y ejecutar:</li>
+</ol>
+<p>sudo docker build -t taller2 .</p>
+<ol class="arabic simple" start="3">
+<li>Luego para abrir una consola en la virtual machine del Doker hacer:</li>
+</ol>
+<p>sudo docker run -t -i taller2 /bin/bash</p>
+<p>4.   Por último para ejecutar el servidor en la virtual machine del docker:
+./taller2/Servidor/build/Servidor</p>
+<p>El script que de Docker que utilizamos es:</p>
+<div class="highlight-json"><div class="highlight"><pre>FROM  stackbrew/ubuntu:14.04
+RUN apt-get update -y
+
+RUN apt-get install -y cmake-curses-gui
+RUN apt-get install -y git
+RUN apt-get install -y build-essential checkinstall
+
+RUN apt-get install -y zlib1g-dev
+RUN apt-get install -y libbz2-dev
+RUN apt-get install -y libsnappy-dev
+RUN apt-get install -y libgflags-dev
+RUN apt-get install -y wget
+RUN apt-get install -y npm
+RUN apt-get install -y scons
+RUN apt-get install -y zip
+
+# Install cmake
+RUN wget http://www.cmake.org/files/v3.3/cmake-3.3.2.tar.gz
+RUN tar xf cmake-3.3.2.tar.gz
+RUN cd cmake-3.3.2 &amp;&amp; ./configure &amp;&amp; make &amp;&amp; make install
+
+
+# Install mongoose
+RUN npm install -y mongoose
+
+# Install rocksdb
+RUN git clone https://github.com/gflags/gflags.git gflags &amp;&amp; cd gflags &amp;&amp; mkdir build &amp;&amp; cd             build &amp;&amp; cmake .. &amp;&amp; make &amp;&amp; make install
+RUN git clone https://github.com/facebook/rocksdb.git rocksdb &amp;&amp; cd rocksdb &amp;&amp; make &amp;&amp; make             install
+
+# Install jsoncpp
+RUN wget http://downloads.sourceforge.net/project/jsoncpp/jsoncpp/0.5.0/jsoncpp-src-0.5.0.tar.gz
+RUN tar -xvzf jsoncpp-src-0.5.0.tar.gz
+RUN cd jsoncpp-src-0.5.0 &amp;&amp; scons platform=linux-gcc &amp;&amp; cd libs/linux-gcc-4.8 &amp;&amp; cp libjson_linux-gcc-4.8_libmt.a /usr/local/lib/
+
+# Install gtest
+RUN wget https://github.com/google/googletest/archive/release-1.7.0.zip &amp;&amp; unzip release-1.7.0.zip
+RUN cd googletest-release-1.7.0 &amp;&amp; ls &amp;&amp; mkdir mybuild &amp;&amp; cd mybuild  &amp;&amp; cmake -        DBUILD_SHARED_LIBS=ON -Dgtest_build_samples=ON -G&quot;Unix Makefiles&quot; .. &amp;&amp; make &amp;&amp; cp -r ../include/gtest/ /usr/local/include/ &amp;&amp; cp lib*.so /usr/local/lib/
+RUN sudo bash -c &#39;echo /usr/local/lib &gt;&gt; /etc/ld.so.conf &#39; &amp;&amp; sudo ldconfig
+
+# Download repository
+RUN git clone https://github.com/pabloalbanese/taller2.git &amp;&amp; cd taller2/Servidor &amp;&amp; mkdir lib
+RUN cp /usr/local/lib/librocksdb.a taller2/Servidor/lib/
+RUN cp /usr/lib/x86_64-linux-gnu/libbz2.a taller2/Servidor/lib/
+RUN cp /usr/lib/x86_64-linux-gnu/libz.a taller2/Servidor/lib/
+RUN cp /usr/lib/libsnappy.a taller2/Servidor/lib/
+RUN cp /usr/local/lib/libjson_linux-gcc-4.8_libmt.a taller2/Servidor/lib/
+
+RUN cd taller2/Servidor &amp;&amp; sh CompileServer.sh
+</pre></div>
+</div>
+</div>
+<div class="section" id="travis">
+<h2>Travis<a class="headerlink" href="#travis" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Nuestro TP esta integrado a Travis, para esto tuvimos que vincular nuestro repositorio GitHub con Travis el cual hace uno de un script Docker para inicializar su maquina virtual. En cada commit que se hace al repositorio se ejecuta el Travis que corre todos los test unitarios que tenemos, como podemos visualizar en la siguientes imagenes:</p>
+<img alt="_images/travis1.png" src="_images/travis1.png" />
+<img alt="_images/travis2.png" src="_images/travis2.png" />
+</div>
+<div class="section" id="links">
+<h2>Links<a class="headerlink" href="#links" title="Enlazar permanentemente con este título">¶</a></h2>
+<ol class="arabic simple">
+<li><a class="reference external" href="https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-an-ubuntu-14-04-server">Tutorial instalacion Node.js</a></li>
+<li><a class="reference external" href="https://bienuit.wordpress.com/2013/12/04/how-to-install-rocksdb-on-ubuntu-12-04-lts/">Tutorial instalacion RocksDB</a></li>
+<li><a class="reference external" href="https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-an-ubuntu-14-04-server">Tutorial instalacion Node.js</a></li>
+<li><a class="reference external" href="https://github.com/cesanta/mongoose/">Pagina de descarga Mongoose</a></li>
+<li><a class="reference external" href="https://developer.android.com/sdk/index.html#top">Pagina de descarga Android Studio</a></li>
+<li><a class="reference external" href="https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-an-ubuntu-14-04-server">Tutorial instalacion Node.js</a></li>
+<li><a class="reference external" href="https://github.com/pabloalbanese/taller2">Repositorio Github</a></li>
+<li><a class="reference external" href="https://github.com/pabloalbanese/taller2/issues">Listado de issues (tickets)</a></li>
+<li>&#8216;Travis configurado para nuestro desarrollo &lt;<a class="reference external" href="https://travis-ci.org/pabloalbanese/taller2">https://travis-ci.org/pabloalbanese/taller2</a>&gt;&#8217;_</li>
+</ol>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Pablo Albanese, Jose Castelli, Kevin Lew, Eliana Ventura.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
