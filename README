@@ -1,6 +1,15 @@
 -----------------------------------------------------------------------------
 1) Introduccion
 -----------------------------------------------------------------------------
+Es un servidor web que utiliza una libreria llamada 'MONGOOSE' y se trabajo sobre la base de datos 'RocksDB'
+El celular accede al servidor de Mongoose mediante JSON + REST.
+Tiene las mismas opciones que dropbox para el manejo de archivos.
+A nivel interfaz en android es bastante sencillo. Lo complejo es la parte del servidor y como la apk consume las API del server.
+
+Imagenes:
+
+![alt text](https://github.com/JicLotus/Dropbox-source/blob/master/Documentacion/Usuario/_images/15.png)
+
 Creadores: Castelli Jose Ignacio, Lew Kevin.
 -----------------------------------------------------------------------------
 2) Explicacion estructura de carpetas
